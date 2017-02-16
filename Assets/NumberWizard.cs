@@ -10,6 +10,7 @@ public class NumberWizard : MonoBehaviour {
     int maxGuessesAllowed = 10;
     public Text numberDisplay;
     public LevelManager myManager;
+    public ImageRadomizer imgRandomizer;
 	// Use this for initialization
 	void Start () {
 		
@@ -38,6 +39,9 @@ public class NumberWizard : MonoBehaviour {
 	
 	void NextGuess()
 	{
+
+        imgRandomizer.SetThinkingImage();
+
         maxGuessesAllowed--;
         if (maxGuessesAllowed <= 0)
         {
