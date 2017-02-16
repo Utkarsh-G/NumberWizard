@@ -10,6 +10,7 @@ public class NumberWizard : MonoBehaviour {
     int maxGuessesAllowed = 10;
     public Text numberDisplay;
     public LevelManager myManager;
+    public ImageRadomizer imgRandomizer;
 	// Use this for initialization
 	void Start () {
 		
@@ -25,8 +26,8 @@ public class NumberWizard : MonoBehaviour {
 		print ("Pick a number in your head.");
 		*/
 		highNumber = 1001;
-		lowNumber = 1;
-        guess = 500;//Random.Range(1, 1001);
+		lowNumber = 1; 
+        guess = Random.Range(1, 1001);
         numberDisplay.text = "I guess you are thinking... " + guess.ToString();
         /*
 		print("The highest number is " + highNumber);
@@ -38,13 +39,16 @@ public class NumberWizard : MonoBehaviour {
 	
 	void NextGuess()
 	{
+
+        imgRandomizer.SetThinkingImage();
+
         maxGuessesAllowed--;
         if (maxGuessesAllowed <= 0)
         {
             myManager.LoadLevel(2);
         }
         
-		guess = (highNumber + lowNumber)/ 2;
+        guess = Random.Range(lowNumber, highNumber + 1);//(highNumber + lowNumber)/ 2;
         if (maxGuessesAllowed != 1)
         {
             numberDisplay.text = "Gimme " + maxGuessesAllowed.ToString() +
