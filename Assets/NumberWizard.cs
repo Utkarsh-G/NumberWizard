@@ -26,7 +26,7 @@ public class NumberWizard : MonoBehaviour {
 		*/
 		highNumber = 1001;
 		lowNumber = 1;
-        guess = 500;//Random.Range(1, 1001);
+        guess = Random.Range(1, 1001);
         numberDisplay.text = "I guess you are thinking... " + guess.ToString();
         /*
 		print("The highest number is " + highNumber);
@@ -44,7 +44,7 @@ public class NumberWizard : MonoBehaviour {
             myManager.LoadLevel(2);
         }
         
-		guess = (highNumber + lowNumber)/ 2;
+        guess = Random.Range(lowNumber, highNumber + 1);//(highNumber + lowNumber)/ 2;
         if (maxGuessesAllowed != 1)
         {
             numberDisplay.text = "Gimme " + maxGuessesAllowed.ToString() +
