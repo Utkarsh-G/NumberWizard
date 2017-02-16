@@ -26,7 +26,7 @@ public class NumberWizard : MonoBehaviour {
 		print ("Pick a number in your head.");
 		*/
 		highNumber = 1001;
-		lowNumber = 1;
+		lowNumber = 1; 
         guess = Random.Range(1, 1001);
         numberDisplay.text = "I guess you are thinking... " + guess.ToString();
         /*
